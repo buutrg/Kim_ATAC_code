@@ -1,0 +1,43 @@
+#list of summary statistics (traits to be analyzed: 28 brain-related traits, 6 control traits)
+declare -a LIST=(
+"UKB_460K.body_BMIz"
+"UKB_460K.cov_EDU_YEARS"
+"UKB_460K.cov_SMOKING_STATUS"
+"PASS_Intelligence_SavageJansen2018"
+"UKB_460K.mental_NEUROTICISM"
+"UKB_460K.other_MORNINGPERSON"
+"UKB_460K.repro_MENARCHE_AGE"
+"PASS_Worry_Nagel2018"
+"PASS_MDD_Howard2019"
+"PASS_ReactionTime_Davies2018"
+"UKB_460K.repro_AgeFirstBirth_Female"
+"PASS_Schizophrenia_Pardinas2018"
+"PASS_SmokingInitiation_Liu2019"
+"PASS_SleepDuration_Dashti2019"
+"PASS_BIP_Stahl2019"
+"PASS_GeneralRiskTolerance_KarlssonLinner2019"
+"PASS_Insomnia_Jansen2019"
+"PASS_DrinksPerWeek_Liu2019"
+"PASS_MedicationUse_Wu2019"
+"PASS_ADHD_Demontis2018"
+"PASS_SCZvsBD_Ruderfer2018"
+"PASS_CigarettesPerDay_Liu2019"
+"PASS_SmokingCessation_Liu2019"
+"PASS_IschemicStroke_Malik2018"
+"PASS_Anorexia"
+"PASS_Alzheimers_Jansen2019"
+"PASS_AgeOfInitiation_Liu2019"
+"PASS_Autism"
+"PASS_Coronary_Artery_Disease_Howson_2017"
+"PASS_Bone_Mineral_Density_Kemp_2017"
+"PASS_Rheumatoid_Arthritis"
+"UKB_460K.disease_T2D"
+"UKB_460K.pigment_SUNBURN"
+"PASS_BreastCancer"
+);
+	     
+for TRAIT in "${LIST[@]}"
+do
+	python /random/directory/PartitionHeritability_baseline_others.py "\""$TRAIT"\"".sumstats "$1"
+done
+
